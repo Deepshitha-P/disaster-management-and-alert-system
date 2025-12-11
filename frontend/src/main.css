@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* -----------------------------
+   Global styles
+------------------------------ */
+body {
+  @apply bg-gray-50 text-gray-900;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Card style for forms and dashboards */
+.card {
+  @apply bg-white shadow-md rounded-2xl p-6;
+}
+
+/* Input fields */
+.input {
+  @apply w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
+
+/* Primary buttons */
+.btn-primary {
+  @apply bg-blue-600 text-white rounded-lg p-2 font-semibold hover:bg-blue-700 transition;
+}
+
+/* Secondary buttons */
+.btn-secondary {
+  @apply bg-gray-200 text-gray-900 rounded-lg p-2 font-medium hover:bg-gray-300 transition;
+}
+/* src/index.css or src/main.css */
+/* Keep map below overlay UIs */
+.leaflet-container {
+  z-index: 0 !important;
+}
+
+/* Modal overlay should always be above map */
+.sos-modal {
+  position: fixed !important;
+  inset: 0 !important;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 5000 !important; /* higher than Leaflet */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-form {
+  position: relative;
+  z-index: 6000 !important;
+}
